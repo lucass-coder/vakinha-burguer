@@ -6,10 +6,10 @@ import 'package:vakinha_burger_mobile/app/models/user_model.dart';
 
 import './auth_repository.dart';
 
-class AuthRepositoryIpl implements AuthRepository {
+class AuthRepositoryImpl implements AuthRepository {
   final RestClient _restClient;
 
-  AuthRepositoryIpl({
+  AuthRepositoryImpl({
     required RestClient restClient,
   }) : _restClient = restClient;
 
