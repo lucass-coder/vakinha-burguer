@@ -51,7 +51,9 @@ class LoginPage extends StatelessWidget {
                     child: VakinhaButton(
                       width: double.infinity,
                       label: 'Entrar',
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed('/homePage');
+                      },
                     ),
                   ),
                   // Empurra os próximos itens para baixo
