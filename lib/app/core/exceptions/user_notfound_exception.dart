@@ -1,1 +1,1 @@
-class UserNotFountException implements Exception {}
+class UserNotFoundException implements Exception {}

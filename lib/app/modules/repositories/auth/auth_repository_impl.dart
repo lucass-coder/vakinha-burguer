@@ -31,14 +31,14 @@ class AuthRepositoryImpl implements AuthRepository {
 
       throw RestClientException(message);
     }
-
-    return UserModel.fromJson('source');
+    return login(email, password);
+    //return UserModel.fromJson('source');
   }
 
   @override
-  Future<UserModel> login(String name, String password) async {
+  Future<UserModel> login(String email, String password) async {
     final result = await _restClient.post('/auth/', {
-      'name': name,
+      'email': email,
       'password': password,
     });
 
@@ -49,7 +49,7 @@ class AuthRepositoryImpl implements AuthRepository {
           error: result.statusText,
           stackTrace: StackTrace.current,
         );
-        throw UserNotFountException();
+        throw UserNotFoundException();
       }
       log(
         'Erro ao autenticar o usuário ( ${result.statusCode} )',

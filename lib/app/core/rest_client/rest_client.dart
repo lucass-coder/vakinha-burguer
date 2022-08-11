@@ -1,7 +1,8 @@
 import 'package:get/get.dart';
 
 class RestClient extends GetConnect {
-  final String _backendBaseUrl = '';
+  final String _backendBaseUrl = 'https://vakinhaburguer.cloudns.nz';
+  //final String _backendBaseUrl = 'http://localhost:8080';
 
   RestClient() {
     httpClient.baseUrl = _backendBaseUrl;
