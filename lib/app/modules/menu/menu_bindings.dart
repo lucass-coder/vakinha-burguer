@@ -6,10 +6,8 @@ import './menu_controller.dart';
 class MenuBindings implements Bindings {
   @override
   void dependencies() {
-    // DESCOMENTAR
-    // Get.lazyPut<ProductRepository>(
-    //     () => ProductRepositoryImpl(restClient: Get.find()));
-    //Get.put(MenuController(ProductRepository: Get.find()));
-    Get.put(MenuController());
+    Get.lazyPut<ProductRepository>(
+        () => ProductRepositoryImpl(restClient: Get.find()));
+    Get.put(MenuController(productRepository: Get.find()));
   }
 }

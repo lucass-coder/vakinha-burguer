@@ -5,13 +5,13 @@ class ProductModel {
   String name;
   String description;
   double price;
-  String imag;
+  String image;
   ProductModel({
     required this.id,
     required this.name,
     required this.description,
     required this.price,
-    required this.imag,
+    required this.image,
   });
 
   Map<String, dynamic> toMap() {
@@ -21,7 +21,7 @@ class ProductModel {
     result.addAll({'name': name});
     result.addAll({'description': description});
     result.addAll({'price': price});
-    result.addAll({'imag': imag});
+    result.addAll({'image': image});
 
     return result;
   }
@@ -32,7 +32,7 @@ class ProductModel {
       name: map['name'] ?? '',
       description: map['description'] ?? '',
       price: map['price']?.toDouble() ?? 0.0,
-      imag: map['imag'] ?? '',
+      image: map['image'] ?? '',
     );
   }
 

@@ -14,10 +14,7 @@ class ProductRepositoryImpl implements ProductRepository {
 
   @override
   Future<List<ProductModel>> findAll() async {
-    // DESCOMENTAR
-    // CRIAR UMA LISTA ESTÁTICA E RETORNAR ATÉ FAZER O BACK END
-
-    final result = await _restClient.get('/products');
+    final result = await _restClient.get('/products/');
 
     if (result.hasError) {
       // Alternativa para o print

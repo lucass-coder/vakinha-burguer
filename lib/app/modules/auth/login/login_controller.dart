@@ -34,6 +34,7 @@ class LoginController extends GetxController with LoaderMixin, MessagesMixin {
       storage.write(Constants.USER_KEY, userLogged.id);
 
       _loading.toggle();
+      Get.toNamed('/homePage');
     } on UserNotFoundException catch (e, s) {
       _loading.toggle();
       log('Login ou senha inválidos', error: e, stackTrace: s);

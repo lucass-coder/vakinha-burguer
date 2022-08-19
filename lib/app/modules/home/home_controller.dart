@@ -1,5 +1,8 @@
+// ignore_for_file: body_might_complete_normally_nullable
+
 import 'package:flutter/src/widgets/navigator.dart';
 import 'package:get/get.dart';
+import 'package:vakinha_burger_mobile/app/core/services/auth_service.dart';
 import 'package:vakinha_burger_mobile/app/modules/menu/menu_bindings.dart';
 import 'package:vakinha_burger_mobile/app/modules/menu/menu_page.dart';
 
@@ -14,7 +17,8 @@ class HomeController extends GetxController {
   set tabIndex(int index) {
     _tabIndex(index);
     if (_tabs[index] == '/exit') {
-      Get.toNamed('/auth/login');
+      Get.find<AuthService>().logout();
+      //Get.toNamed('/auth/login');
       // print('HORA DO LOGOUT');
     } else {
       Get.toNamed(_tabs[index], id: NAVIGATOR_KEY);
