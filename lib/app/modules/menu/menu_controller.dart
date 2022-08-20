@@ -56,7 +56,6 @@ class MenuController extends GetxController with LoaderMixin, MessagesMixin {
   }
 
   Future<void> refreshPage() async {
-    print('CHAMOU O REFRESHPAGE');
     try {
       await findAllProducts();
     } catch (e, s) {
